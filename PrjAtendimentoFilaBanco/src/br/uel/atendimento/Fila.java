@@ -19,8 +19,7 @@ public class Fila {
 	}
 	
 	public int buscarPosicao(String nome) {
-		int posicao = this.fila.indexOf(nome);
-		return posicao;
+		return this.fila.indexOf(nome);
 	}
 	
 	public void imprimirFIla() {
