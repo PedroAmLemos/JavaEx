@@ -7,7 +7,7 @@ public class Sistema {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Bomba bomba = new Bomba(); 
-		int opcao = 0;
+		int opcao;
 		String nome, nome2;
 		double preco;
 		do {
@@ -15,7 +15,7 @@ public class Sistema {
 			System.out.println("(1) Cadastrar um novo combustível");
 			System.out.println("(2) Usar uma bomba");
 			System.out.println("(3) Sair");
-			opcao = Integer.valueOf(input.nextLine());
+			opcao = Integer.parseInt(input.nextLine());
 			switch(opcao) {
 				case 1:
 					System.out.println("Insira o nome do combustível: ");

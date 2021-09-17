@@ -4,6 +4,15 @@ import java.util.Scanner;
 
 public class Bomba {
 	private int numeroId;
+
+	public ArrayList<Combustivel> getCombustiveis() {
+		return combustiveis;
+	}
+
+	public void setCombustiveis(ArrayList<Combustivel> combustiveis) {
+		this.combustiveis = combustiveis;
+	}
+
 	private ArrayList<Combustivel> combustiveis = new ArrayList<>();
 
 	public int getNumeroId() {
@@ -18,9 +27,9 @@ public class Bomba {
 		Combustivel novoCombustivel = new Combustivel(nome, preco);
 		this.combustiveis.add(novoCombustivel);
 	}
-	
+
 	public void selectCombustivel(String nome, Scanner input) {
-		int opcao = 0;
+		int opcao;
 		double qntLitro;
 		double qntDinheiro;
 		int flag = 0;
@@ -38,17 +47,17 @@ public class Bomba {
 					switch(opcao) {
 						case 1:
 							System.out.println("Insira a quantidade de litros: ");
-							qntLitro = Double.valueOf(input.nextLine());
+							qntLitro = Double.parseDouble(input.nextLine());
 							combustivel.absLitro(qntLitro);
 							System.out.println("Digite (3) para voltar ou (0) para abastecer novamente");
-							opcao = Integer.valueOf(input.nextLine());
+							opcao = Integer.parseInt(input.nextLine());
 							break;
 						case 2:
 							System.out.println("Insira a quantidade de dinheiro: ");
-							qntDinheiro = Double.valueOf(input.nextLine());
+							qntDinheiro = Double.parseDouble(input.nextLine());
 							combustivel.absDin(qntDinheiro);
 							System.out.println("Digite (3) para voltar ou (0) para abastecer novamente");
-							opcao = Integer.valueOf(input.nextLine());
+							opcao = Integer.parseInt(input.nextLine());
 							break;
 						case 3:
 							break;
